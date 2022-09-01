@@ -1,7 +1,7 @@
 const { ethers } = require("hardhat");
 // const prompt = require("prompt");
 const { abi } = require("../../artifacts/contracts/NFT.sol/FireNFT.json");
-const rpcUrl = "http://127.0.0.1:8545";
+const rpcUrl = process.env.HARDHAT_LOCALHOST_NODE_URL;
 const nftAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
 
 async function mintItem(
@@ -50,6 +50,10 @@ async function main() {
 
   console.log(`Token ID -> ${tokenId}`);
 }
+
+module.exports = {
+  mintItem,
+};
 
 main().catch((error) => {
   console.error(error.message);
