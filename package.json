@@ -1,5 +1,5 @@
 {
-  "name": "avalanche-smart-contract-quickstart",
+  "name": "nft-market-place-on-avalanche",
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.2",
     "@nomiclabs/hardhat-waffle": "^2.0.1",
@@ -7,12 +7,14 @@
     "@types/chai": "^4.2.21",
     "@types/mocha": "^9.0.0",
     "@types/node": "^16.7.1",
-    "avalanche": "3.8.5",
+    "avalanche": "^3.15.4",
     "chai": "^4.3.4",
+    
     "ethereum-waffle": "^3.4.0",
     "ethereumjs-tx": "^2.1.2",
     "ethers": "^5.4.5",
     "hardhat": "2.6.1",
+    "prompt": "^1.3.0",
     "ts-node": "^10.2.1",
     "web3": "^1.5.2"
   },
@@ -26,6 +28,10 @@
   ],
   "license": "BSD-3-Clause",
   "scripts": {
+    "deploy-721": "npx hardhat run scripts/custom-scripts/deploy-721.js --network localhost",
+    "deploy-20": "npx hardhat run scripts/custom-scripts/deploy-20.js --network localhost",
+    "deploy-marketplace": "npx hardhat run scripts/custom-scripts/deploy-marketplace.js --network localhost",
+    "mint-721": "npx hardhat run scripts/custom-scripts/mint.js --network localhost",
     "precompile": "rimraf ./build/",
     "compile": "npx hardhat compile",
     "console": "npx hardhat console",

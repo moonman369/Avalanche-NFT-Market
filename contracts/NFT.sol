@@ -65,6 +65,10 @@ contract FireNFT is ERC721, Ownable {
     return TokenExtraInfos[_tokenId].minter;
   }
 
+  function getRoyaltyPercentage(uint256 _tokenId) public view returns (uint256) {
+    return TokenExtraInfos[_tokenId].royaltyPercentage;
+  }
+
   function getmetaDataUri (uint256 _tokenId) public view returns (string memory){
     return TokenExtraInfos[_tokenId].metaDataUri;
   }
