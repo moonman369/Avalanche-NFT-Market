@@ -33,6 +33,7 @@
     "deploy-marketplace": "npx hardhat run scripts/custom-scripts/deploy-marketplace.js --network localhost",
     "mint-721": "npx hardhat run scripts/custom-scripts/mint.js --network localhost",
     "sell": "npx hardhat run scripts/custom-scripts/sell.js --network localhost",
+    "purchase": "npx hardhat run scripts/custom-scripts/purchase.js --network localhost",
     "precompile": "rimraf ./build/",
     "compile": "npx hardhat compile",
     "console": "npx hardhat console",

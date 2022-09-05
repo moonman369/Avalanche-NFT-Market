@@ -5,7 +5,7 @@ const prompt = require("prompt");
 const { BigNumber } = require("ethers");
 require("dotenv").config();
 const nftAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
-const nftMarketAddress = "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0";
+const nftMarketAddress = "0x59b670e9fA9D0A427751Af201D676719a970857b";
 
 const rpcUrl = process.env.HARDHAT_LOCALHOST_NODE_URL;
 const provider = new ethers.providers.JsonRpcProvider(rpcUrl);
@@ -40,17 +40,18 @@ async function main() {
       addr1.address,
       nftMarketAddress,
       BigNumber.from(result.TokenID),
-      100000
+      1000
     );
     console.log(res);
     console.log(`Listing successful!!`);
+    process.exit(1);
   });
 }
 
 module.exports = {
-    approveForAll,
-    sellItem
-}
+  approveForAll,
+  sellItem,
+};
 
 main().catch((error) => {
   console.error(error.message);

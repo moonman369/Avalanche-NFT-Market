@@ -8,7 +8,7 @@ contract OpenTradeToken is ERC20, Ownable {
   string private TOKEN_NAME = "Open Trading Token";
   string private TOKEN_SYMBOL = "OTT";
 
-  uint256 private constant TOTAL_SUPPLY = 1000000000000;
+  uint256 private constant TOTAL_SUPPLY = 100000000000000000;
 
   constructor() ERC20(TOKEN_NAME, TOKEN_SYMBOL) {
     _mint(msg.sender, TOTAL_SUPPLY);

@@ -47,8 +47,8 @@ async function main() {
     'metadata : {"1": "2"}',
     5
   );
-
-  console.log(`Token ID -> ${tokenId}`);
+  console.log(`Token ID -> ${parseInt(tokenId, 16)}`);
+  process.exit(1);
 }
 
 module.exports = {
