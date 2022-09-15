@@ -13,3 +13,4 @@ vscode:
   extensions:
     - esbenp.prettier-vscode
     - rvest.vs-code-prettier-eslint
+    - JuanBlanco.solidity
