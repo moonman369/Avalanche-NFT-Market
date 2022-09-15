@@ -37,9 +37,13 @@ contract FireNFT is ERC721, Ownable {
     public
     returns (uint256)
   {
+    require(
+      _owner != address(0),
+      "FireNFT: Cannot mint item to null address."
+    );
     require (
       _royaltyPercentage >= 0 && _royaltyPercentage <= 10,
-      "Royalty Percentage out of of limits. Must be integer between 0 and 10"
+      "FireNFT: Royalty Percentage out of of limits. Must be integer between 0 and 10"
     );
 
     _tokenIds.increment();

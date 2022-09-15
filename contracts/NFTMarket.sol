@@ -49,7 +49,7 @@ contract OpenFireMarketplace is Ownable, ReentrancyGuard {
     }
 
     modifier checkPrice (uint256 _amount) {
-        require(_amount > 10, "OpenFireMarket: Amount should be greater than 100 wei");
+        require(_amount > 100, "OpenFireMarket: Amount should be greater than 100 wei");
         _;
     }
 
@@ -109,7 +109,7 @@ contract OpenFireMarketplace is Ownable, ReentrancyGuard {
         require(sale.onSale, "OpenFireMarket: Token is not on sale");
 
         require(
-            sale.sellingPrice == _payableAmount,
+            sale.sellingPrice <= _payableAmount,
             "OpenFireMarket: Not enough value to buy token"
         );
 
