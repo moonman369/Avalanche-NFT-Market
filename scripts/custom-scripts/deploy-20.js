@@ -14,6 +14,8 @@ async function main() {
   console.log(
     `OpenTradeToken (OTT) has been deployed to address: ${token.address}`
   );
+  const addressArray = [...addrs].map((signer) => signer.address);
+  console.log(addressArray);
   for (let addr of addrs) {
     await token.connect(deployer).transfer(addr.address, 100000);
     console.log(`${100000} transferred to ${addr.address}`);
@@ -23,3 +25,5 @@ async function main() {
 main().catch((error) => {
   console.error(error);
 });
+
+module.exports = { deployTradeToken };
